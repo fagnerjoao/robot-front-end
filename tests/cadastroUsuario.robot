@@ -2,6 +2,7 @@
 Resource        ../resources/base.robot
 Resource        ../pages/home.robot
 Resource        ../pages/formulario.robot
+Resource        ../pages/exportarDados.robot
 
 Test Setup      Start App
 Test Teardown   Close App
@@ -33,3 +34,10 @@ Validar Atualização de Dados do Cliente
     Validar Mensagem Sucesso  Cadastro atualizado com sucesso
     Selecionar Cliente
     Validar Nome Cliente    João da Silva
+
+Validar Exportação de Dados
+    Acessar Tela de Cadastro
+    Inserir Dados Básicos
+    Saval Formulário
+    xValidar Mensagem Sucesso  Cadastro efetuado com sucesso
+    Exportar Dados
