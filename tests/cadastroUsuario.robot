@@ -8,6 +8,11 @@ Test Setup      Start App
 Test Teardown   Close App
 
 *** Test Case ***
+Validar Não Preenchimento do Nome
+    Validar Tela inicial
+    Acessar Tela de Cadastro
+    Saval Formulário
+
 Validar Cadastro Básico Cliente
     Validar Tela inicial
     Acessar Tela de Cadastro
@@ -39,5 +44,5 @@ Validar Exportação de Dados
     Acessar Tela de Cadastro
     Inserir Dados Básicos
     Saval Formulário
-    xValidar Mensagem Sucesso  Cadastro efetuado com sucesso
+    Validar Mensagem Sucesso  Cadastro efetuado com sucesso
     Exportar Dados

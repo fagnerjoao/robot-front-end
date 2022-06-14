@@ -71,6 +71,7 @@ Inserir Dados Básicos
     Input Text                          ${EDIT_OBS}         NEON > ALL
 
 Saval Formulário
+    Wait Until Page Contains Element        ${BTN_SALVAR}
     Click Element                           ${BTN_SALVAR}
 
 Validar Mensagem Sucesso
@@ -91,5 +92,7 @@ Atulizar Dados Cliente
     Input Text                              ${EDIT_NOME}        ${nome}
     Input Text                              ${EDIT_EMAIL}       ${email}
 
+Validar Aviso de Erro no Campo Nome
+    Page Should Contain Text                Insira a Nome
     
 
