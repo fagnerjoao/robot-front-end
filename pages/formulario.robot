@@ -40,7 +40,7 @@ ${EDIT_BANCO} =             id = br.com.dudstecnologia.cadastrodeclientes:id/edi
 ${EDIT_AGENCIA} =           id = br.com.dudstecnologia.cadastrodeclientes:id/editAgencia
 ${EDIT_CONTA} =             id = br.com.dudstecnologia.cadastrodeclientes:id/editConta	
 ${BTN_SALVAR} =             id = br.com.dudstecnologia.cadastrodeclientes:id/btnSalvar
-${BTN_EXCLUIR} =            id = br.com.dudstecnologia.cadastrodeclientes:id/btnExcluir
+${BTN_EXCLUIR} =            xpath = //*[@text='EXCLUIR']
 ${ANDROID_MESSAGE}=         id = android:id/message
 ${ANDROID_BTN_OK}=          id = android:id/button1
 
@@ -90,6 +90,12 @@ Atulizar Dados Cliente
     Wait Until Page Contains Element        ${EDIT_NOME}
     Input Text                              ${EDIT_NOME}        ${nome}
     Input Text                              ${EDIT_EMAIL}       ${email}
+
+Excluir Cliente
+    Click Element                           ${BTN_EXCLUIR}
+    Wait Until Page Contains Element        ${ANDROID_MESSAGE}
+    Element Should Contain Text             ${ANDROID_MESSAGE}  Tem certeza que deseja excluir este cadastro?
+    Click Element                           ${ANDROID_BTN_OK}
 
     
 

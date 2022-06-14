@@ -16,18 +16,18 @@ Validar Cadastro Básico Cliente
     Validar Mensagem Sucesso  Cadastro efetuado com sucesso
 
 Validar Consulta a Cadastro do Cliente
-    Acessar Tela de Cadastro
-    Inserir Dados Básicos
-    Saval Formulário
-    Validar Mensagem Sucesso  Cadastro efetuado com sucesso
+    #Acessar Tela de Cadastro
+    #Inserir Dados Básicos
+    #Saval Formulário
+    #Validar Mensagem Sucesso  Cadastro efetuado com sucesso
     Selecionar Cliente
     Validar Nome Cliente    João Silva
 
 Validar Atualização de Dados do Cliente
-    Acessar Tela de Cadastro
-    Inserir Dados Básicos
-    Saval Formulário
-    Validar Mensagem Sucesso  Cadastro efetuado com sucesso
+    #Acessar Tela de Cadastro
+    #Inserir Dados Básicos
+    #Saval Formulário
+    #Validar Mensagem Sucesso  Cadastro efetuado com sucesso
     Selecionar Cliente
     Atulizar Dados Cliente  João da Silva  joaoDAsilva@email.com
     Saval Formulário
@@ -36,8 +36,17 @@ Validar Atualização de Dados do Cliente
     Validar Nome Cliente    João da Silva
 
 Validar Exportação de Dados
-    Acessar Tela de Cadastro
-    Inserir Dados Básicos
-    Saval Formulário
-    xValidar Mensagem Sucesso  Cadastro efetuado com sucesso
+    #Acessar Tela de Cadastro
+    #Inserir Dados Básicos
+    #Saval Formulário
+    #Validar Mensagem Sucesso  Cadastro efetuado com sucesso
     Exportar Dados
+
+Validar Exclusão de Cliente
+    #Acessar Tela de Cadastro
+    #Inserir Dados Básicos
+    #Saval Formulário
+    #Validar Mensagem Sucesso  Cadastro efetuado com sucesso
+    Selecionar Cliente
+    Excluir Cliente
+    Validar Lista Vazia
