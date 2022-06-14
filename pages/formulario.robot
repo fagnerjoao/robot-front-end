@@ -78,12 +78,12 @@ Validar Mensagem Sucesso
     Wait Until Page Contains Element        ${ANDROID_MESSAGE}
     Element Should Contain Text             ${ANDROID_MESSAGE}  ${mensagem_sucesso}
     Click Element                           ${ANDROID_BTN_OK}
+    Go Back
 
 Validar Nome Cliente
     [Arguments]                             ${nome}
     Wait Until Page Contains Element        ${EDIT_NOME}
     Element Should Contain Text             ${EDIT_NOME}        ${nome}
-    Click Element                           ${ANDROID_BTN_OK}
 
 Atulizar Dados Cliente
     [Arguments]                             ${nome}     ${email}
