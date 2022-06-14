@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220613 23:35:20.481" rpa="false" schemaversion="3">
+<suite id="s1" name="Teste" source="C:\Users\fagne\Projetos\neon\tests\teste.robot">
+<test id="s1-t1" name="Validar Tela inicial" line="8">
+<kw name="Start App" library="base" type="SETUP">
+<kw name="Get Current Date" library="DateTime">
+<var>${TODAY}</var>
+<arg>result_format=%d/%m/%Y %H:%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220613 23:35:20.638" level="INFO">${TODAY} = 13/06/2022 23:35</msg>
+<status status="PASS" starttime="20220613 23:35:20.638" endtime="20220613 23:35:20.638"/>
+</kw>
+<kw name="Set Appium Timeout" library="Zoomba.MobileLibrary">
+<arg>30</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20220613 23:35:20.638" endtime="20220613 23:35:20.639"/>
+</kw>
+<kw name="Android Local" library="devices">
+<kw name="Open Application" library="Zoomba.MobileLibrary">
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Android Emulator</arg>
+<arg>udid=emulator-5554</arg>
+<arg>app=${EXECDIR}/app/cadastro_clientes_teste.apk</arg>
+<arg>fullReset=false</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<kw name="Save Appium Screenshot" library="Zoomba.MobileLibrary">
+<doc>Takes a screenshot with a unique filename to be stored in Robot Framework compiled
+reports.</doc>
+<msg timestamp="20220613 23:35:20.677" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20220613 23:35:20.675" endtime="20220613 23:35:20.679"/>
+</kw>
+<msg timestamp="20220613 23:35:20.680" level="WARN">Keyword 'Save Appium Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220613 23:35:20.681" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The application at 'C:\Users\fagne\Projetos\neon/app/cadastro_clientes_teste.apk' does not exist or is not accessible
+</msg>
+<status status="FAIL" starttime="20220613 23:35:20.639" endtime="20220613 23:35:20.682"/>
+</kw>
+<status status="FAIL" starttime="20220613 23:35:20.639" endtime="20220613 23:35:20.682"/>
+</kw>
+<status status="FAIL" starttime="20220613 23:35:20.638" endtime="20220613 23:35:20.683"/>
+</kw>
+<kw name="Close App" library="base" type="TEARDOWN">
+<kw name="Close Application" library="Zoomba.MobileLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Save Appium Screenshot" library="Zoomba.MobileLibrary">
+<doc>Takes a screenshot with a unique filename to be stored in Robot Framework compiled
+reports.</doc>
+<msg timestamp="20220613 23:35:20.685" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20220613 23:35:20.685" endtime="20220613 23:35:20.686"/>
+</kw>
+<msg timestamp="20220613 23:35:20.687" level="WARN">Keyword 'Save Appium Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220613 23:35:20.688" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20220613 23:35:20.684" endtime="20220613 23:35:20.688"/>
+</kw>
+<status status="FAIL" starttime="20220613 23:35:20.684" endtime="20220613 23:35:20.688">No application is open</status>
+</kw>
+<status status="FAIL" starttime="20220613 23:35:20.637" endtime="20220613 23:35:20.688">Setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The application at 'C:\Users\fagne\Projetos\neon/app/cadastro_clientes_teste.apk' does not exist or is not accessible
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<status status="FAIL" starttime="20220613 23:35:20.483" endtime="20220613 23:35:20.690"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Teste">Teste</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220613 23:35:20.634" level="WARN">Imported resource file 'C:\Users\fagne\Projetos\neon\resources\helpers.robot' is empty.</msg>
+<msg timestamp="20220613 23:35:20.680" level="WARN">Keyword 'Save Appium Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220613 23:35:20.687" level="WARN">Keyword 'Save Appium Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>
