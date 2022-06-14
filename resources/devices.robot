@@ -6,4 +6,5 @@ Android Local
     ...                 deviceName=Android Emulator
     ...                 udid=emulator-5554
     ...                 app=${EXECDIR}/app/cadastro_clientes_teste.apk
+    ...                 autoGrantPermissions=true
     ...                 fullReset=false
