@@ -11,6 +11,11 @@ ${ANDROID_BTN_OK}=          id = android:id/button1
 ${ANDROID_ICON_FILES}=      id = Files
 ${ANDROID_SHOWTOOLS}=       id = Show roots
 
+*** Variable ***	
+${BTN_EXPORTAR} =            id = br.com.dudstecnologia.cadastrodeclientes:id/btnExportar
+${BTN_BACKUP} =              id = br.com.dudstecnologia.cadastrodeclientes:id/btnBackup
+${BTN_RESTAURAR} =           id = br.com.dudstecnologia.cadastrodeclientes:id/btnRestaurar
+
 
 
 *** Keywords ***
