@@ -14,13 +14,16 @@ Validar Tela inicial
     Wait Until Page Contains Element    ${HOME_TXT}
 
 Acessar Tela de Cadastro
-    Clcick Element  ${BTN_MENU}
-    Clcick Element  ${BTN_CAD_NOVO}
+    Click Element                       ${BTN_MENU}
+    Wait Until Page Contains Element    ${BTN_CAD_NOVO}
+    Click Element                       ${BTN_CAD_NOVO}
 
 Acessar Tela de Exportar Dados
-    Clcick Element  ${BTN_MENU}
-    Clcick Element  ${BTN_EXPORTAR}
+    Click Element                       ${BTN_MENU}
+    Wait Until Page Contains Element    ${BTN_EXPORTAR}
+    Click Element                       ${BTN_EXPORTAR}
 
 Acessar Tela Sobre o App
-    Clcick Element  ${BTN_MENU}
-    Clcick Element  ${BTN_EXPORTARBTN_SOBRE}
+    Click Element                       ${BTN_MENU}
+    Wait Until Page Contains Element    ${BTN_EXPORTARBTN_SOBRE}
+    Click Element                       ${BTN_EXPORTARBTN_SOBRE}
