@@ -27,5 +27,3 @@ Exportar Dados
     Wait Until Page Contains Element    ${ANDROID_MESSAGE}
     Element Should Contain Text         ${ANDROID_MESSAGE}  O arquivo foi salvo na sua pasta padrão de documentos com o nome 'CAD_${TODAY}.xls'.
     Click Element                       ${ANDROID_BTN_OK}
-    
-
