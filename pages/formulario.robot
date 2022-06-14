@@ -42,6 +42,7 @@ ${EDIT_CONTA} =             id = br.com.dudstecnologia.cadastrodeclientes:id/edi
 ${BTN_SALVAR} =             id = br.com.dudstecnologia.cadastrodeclientes:id/btnSalvar
 ${BTN_EXCLUIR} =            id = br.com.dudstecnologia.cadastrodeclientes:id/btnExcluir
 ${ANDROID_MESSAGE}=         id = android:id/message
+${ANDROID_BTN_OK}=          id = android:id/button1
 
 
 
@@ -70,13 +71,25 @@ Inserir Dados Básicos
     Input Text                          ${EDIT_OBS}         NEON > ALL
 
 Saval Formulário
-    Click Element                       ${BTN_SALVAR}
+    Click Element                           ${BTN_SALVAR}
 
 Validar Mensagem Sucesso
+    [Arguments]                             ${mensagem_sucesso}
     Wait Until Page Contains Element        ${ANDROID_MESSAGE}
-    Element Should Contain Text             ${ANDROID_MESSAGE}  Cadastro efetuado com sucesso
-    
+    Element Should Contain Text             ${ANDROID_MESSAGE}  ${mensagem_sucesso}
+    Click Element                           ${ANDROID_BTN_OK}
 
+Validar Nome Cliente
+    [Arguments]                             ${nome}
+    Wait Until Page Contains Element        ${EDIT_NOME}
+    Element Should Contain Text             ${EDIT_NOME}        ${nome}
+    Click Element                           ${ANDROID_BTN_OK}
+
+Atulizar Dados Cliente
+    [Arguments]                             ${nome}     ${email}
+    Wait Until Page Contains Element        ${EDIT_NOME}
+    Input Text                              ${EDIT_NOME}        ${nome}
+    Input Text                              ${EDIT_EMAIL}       ${email}
 
     
 

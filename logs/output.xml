@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.2 (Python 3.9.5 on darwin)" generated="20220614 15:48:08.224" rpa="false" schemaversion="2">
+<suite id="s1" name="cadastroUsuario" source="/Users/idd_fsilva/Projetos/neon/tests/cadastroUsuario.robot">
+<test id="s1-t1" name="Validar Cadastro Básico Cliente">
+<kw name="Start App" library="base" type="SETUP">
+<kw name="Get Current Date" library="DateTime">
+<var>${TODAY}</var>
+<arg>result_format=%d/%m/%Y %H:%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220614 15:48:08.370" level="INFO">${TODAY} = 14/06/2022 15:48</msg>
+<status status="PASS" starttime="20220614 15:48:08.370" endtime="20220614 15:48:08.370"/>
+</kw>
+<kw name="Set Appium Timeout" library="Zoomba.MobileLibrary">
+<arg>30</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20220614 15:48:08.370" endtime="20220614 15:48:08.371"/>
+</kw>
+<kw name="Android Local" library="devices">
+<kw name="Open Application" library="Zoomba.MobileLibrary">
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Android Emulator</arg>
+<arg>udid=emulator-5554</arg>
+<arg>app=${EXECDIR}/app/cadastro_clientes_teste.apk</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>fullReset=false</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220614 15:48:08.371" endtime="20220614 15:48:13.569"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:08.371" endtime="20220614 15:48:13.569"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:08.369" endtime="20220614 15:48:13.569"/>
+</kw>
+<kw name="Validar Tela inicial" library="home">
+<kw name="Wait Until Page Contains Element" library="Zoomba.MobileLibrary">
+<arg>${HOME_TXT}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220614 15:48:13.570" endtime="20220614 15:48:14.062"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:13.570" endtime="20220614 15:48:14.062"/>
+</kw>
+<kw name="Acessar Tela de Cadastro" library="home">
+<kw name="Click Element" library="Zoomba.MobileLibrary">
+<arg>${BTN_MENU}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:14.066" level="INFO">Clicking element 'xpath = /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ImageButton'.</msg>
+<status status="PASS" starttime="20220614 15:48:14.063" endtime="20220614 15:48:14.502"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Zoomba.MobileLibrary">
+<arg>${BTN_CAD_NOVO}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220614 15:48:14.502" endtime="20220614 15:48:15.383"/>
+</kw>
+<kw name="Click Element" library="Zoomba.MobileLibrary">
+<arg>${BTN_CAD_NOVO}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:15.386" level="INFO">Clicking element 'id = br.com.dudstecnologia.cadastrodeclientes:id/floating_novo'.</msg>
+<status status="PASS" starttime="20220614 15:48:15.383" endtime="20220614 15:48:15.451"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:14.062" endtime="20220614 15:48:15.451"/>
+</kw>
+<kw name="Inserir Dados Básicos" library="formulario">
+<kw name="Wait Until Page Contains Element" library="Zoomba.MobileLibrary">
+<arg>${RD_BASICO}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220614 15:48:15.452" endtime="20220614 15:48:16.305"/>
+</kw>
+<kw name="Click Element" library="Zoomba.MobileLibrary">
+<arg>${RD_BASICO}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:16.308" level="INFO">Clicking element 'id = br.com.dudstecnologia.cadastrodeclientes:id/rdBasico'.</msg>
+<status status="PASS" starttime="20220614 15:48:16.305" endtime="20220614 15:48:16.362"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_NOME}</arg>
+<arg>João Silva</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:16.364" level="INFO">Typing text 'João Silva' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editNome'</msg>
+<status status="PASS" starttime="20220614 15:48:16.362" endtime="20220614 15:48:16.929"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_DATA}</arg>
+<arg>01/01/1990</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:16.932" level="INFO">Typing text '01/01/1990' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editData'</msg>
+<status status="PASS" starttime="20220614 15:48:16.929" endtime="20220614 15:48:18.091"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_RG}</arg>
+<arg>36.791.254-5</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:18.094" level="INFO">Typing text '36.791.254-5' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editRg'</msg>
+<status status="PASS" starttime="20220614 15:48:18.091" endtime="20220614 15:48:18.725"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_CPF}</arg>
+<arg>561.868.980-40</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:18.728" level="INFO">Typing text '561.868.980-40' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editCpf'</msg>
+<status status="PASS" starttime="20220614 15:48:18.725" endtime="20220614 15:48:19.870"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_ENDERECO}</arg>
+<arg>Rua dos Bobos</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:19.874" level="INFO">Typing text 'Rua dos Bobos' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editEndereco'</msg>
+<status status="PASS" starttime="20220614 15:48:19.870" endtime="20220614 15:48:20.543"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_NUMERO}</arg>
+<arg>0</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:20.546" level="INFO">Typing text '0' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editNumero'</msg>
+<status status="PASS" starttime="20220614 15:48:20.543" endtime="20220614 15:48:21.102"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_BAIRRO}</arg>
+<arg>Dos Sonhos</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:21.105" level="INFO">Typing text 'Dos Sonhos' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editBairro'</msg>
+<status status="PASS" starttime="20220614 15:48:21.102" endtime="20220614 15:48:21.657"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_CEP}</arg>
+<arg>56328-070</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:21.660" level="INFO">Typing text '56328-070' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editCep'</msg>
+<status status="PASS" starttime="20220614 15:48:21.657" endtime="20220614 15:48:22.906"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_CIDADE}</arg>
+<arg>Maravilhosa</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:22.910" level="INFO">Typing text 'Maravilhosa' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editCidade'</msg>
+<status status="PASS" starttime="20220614 15:48:22.906" endtime="20220614 15:48:24.031"/>
+</kw>
+<kw name="Click Element" library="Zoomba.MobileLibrary">
+<arg>${SPINNER_UF}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:24.035" level="INFO">Clicking element 'id = br.com.dudstecnologia.cadastrodeclientes:id/spinnerEstados'.</msg>
+<status status="PASS" starttime="20220614 15:48:24.031" endtime="20220614 15:48:24.594"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Zoomba.MobileLibrary">
+<arg>${TEXTVIEW_UF}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220614 15:48:24.594" endtime="20220614 15:48:25.452"/>
+</kw>
+<kw name="Click Element" library="Zoomba.MobileLibrary">
+<arg>${TEXTVIEW_UF}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:25.456" level="INFO">Clicking element 'xpath = //*[@text='AC']'.</msg>
+<status status="PASS" starttime="20220614 15:48:25.452" endtime="20220614 15:48:26.152"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_TELEFONE1}</arg>
+<arg>2345678</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:26.156" level="INFO">Typing text '2345678' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editTelefone1'</msg>
+<status status="PASS" starttime="20220614 15:48:26.152" endtime="20220614 15:48:26.706"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_TELEFONE2}</arg>
+<arg>988776622</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:26.710" level="INFO">Typing text '988776622' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editTelefone2'</msg>
+<status status="PASS" starttime="20220614 15:48:26.707" endtime="20220614 15:48:27.751"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_EMAIL}</arg>
+<arg>joaosilva@mail.com</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:27.754" level="INFO">Typing text 'joaosilva@mail.com' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editEmail'</msg>
+<status status="PASS" starttime="20220614 15:48:27.751" endtime="20220614 15:48:28.795"/>
+</kw>
+<kw name="Input Text" library="Zoomba.MobileLibrary">
+<arg>${EDIT_OBS}</arg>
+<arg>NEON &gt; ALL</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:28.799" level="INFO">Typing text 'NEON &gt; ALL' into text field 'id = br.com.dudstecnologia.cadastrodeclientes:id/editObs'</msg>
+<status status="PASS" starttime="20220614 15:48:28.795" endtime="20220614 15:48:29.340"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:15.451" endtime="20220614 15:48:29.340"/>
+</kw>
+<kw name="Saval Formulário" library="formulario">
+<kw name="Click Element" library="Zoomba.MobileLibrary">
+<arg>${BTN_SALVAR}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:29.344" level="INFO">Clicking element 'id = br.com.dudstecnologia.cadastrodeclientes:id/btnSalvar'.</msg>
+<status status="PASS" starttime="20220614 15:48:29.340" endtime="20220614 15:48:29.971"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:29.340" endtime="20220614 15:48:29.971"/>
+</kw>
+<kw name="Validar Mensagem Sucesso" library="formulario">
+<arg>Cadastro efetuado com sucesso</arg>
+<kw name="Wait Until Page Contains Element" library="Zoomba.MobileLibrary">
+<arg>${ANDROID_MESSAGE}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220614 15:48:29.971" endtime="20220614 15:48:30.694"/>
+</kw>
+<kw name="Element Should Contain Text" library="Zoomba.MobileLibrary">
+<arg>${ANDROID_MESSAGE}</arg>
+<arg>${mensagem_sucesso}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220614 15:48:30.697" level="INFO">Verifying element 'id = android:id/message' contains text 'Cadastro efetuado com sucesso'.</msg>
+<status status="PASS" starttime="20220614 15:48:30.694" endtime="20220614 15:48:30.729"/>
+</kw>
+<kw name="Click Element" library="Zoomba.MobileLibrary">
+<arg>${ANDROID_BTN_OK}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220614 15:48:30.732" level="INFO">Clicking element 'id = android:id/button1'.</msg>
+<status status="PASS" starttime="20220614 15:48:30.729" endtime="20220614 15:48:30.816"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:29.971" endtime="20220614 15:48:30.816"/>
+</kw>
+<kw name="Close App" library="base" type="TEARDOWN">
+<kw name="Close Application" library="Zoomba.MobileLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220614 15:48:30.817" endtime="20220614 15:48:31.463"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:30.816" endtime="20220614 15:48:31.463"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:08.369" endtime="20220614 15:48:31.463"/>
+</test>
+<test id="s1-t2" name="Validar Consulta a Cadastro do Cliente">
+<kw name="Start App" library="base" type="SETUP">
+<kw name="Get Current Date" library="DateTime">
+<var>${TODAY}</var>
+<arg>result_format=%d/%m/%Y %H:%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220614 15:48:31.465" level="INFO">${TODAY} = 14/06/2022 15:48</msg>
+<status status="PASS" starttime="20220614 15:48:31.464" endtime="20220614 15:48:31.465"/>
+</kw>
+<kw name="Set Appium Timeout" library="Zoomba.MobileLibrary">
+<arg>30</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20220614 15:48:31.465" endtime="20220614 15:48:31.465"/>
+</kw>
+<kw name="Android Local" library="devices">
+<kw name="Open Application" library="Zoomba.MobileLibrary">
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Android Emulator</arg>
+<arg>udid=emulator-5554</arg>
+<arg>app=${EXECDIR}/app/cadastro_clientes_teste.apk</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>fullReset=false</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220614 15:48:31.466" endtime="20220614 15:48:37.346"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:31.466" endtime="20220614 15:48:37.347"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:31.464" endtime="20220614 15:48:37.347"/>
+</kw>
+<kw name="Validar Cadastro Básico Cliente">
+<msg timestamp="20220614 15:48:37.350" level="FAIL">No keyword with name 'Validar Cadastro Básico Cliente' found.</msg>
+<status status="FAIL" starttime="20220614 15:48:37.350" endtime="20220614 15:48:37.350"/>
+</kw>
+<kw name="Selecionar Cliente" library="home">
+<status status="NOT RUN" starttime="20220614 15:48:37.350" endtime="20220614 15:48:37.350"/>
+</kw>
+<kw name="Validar Nome Cliente" library="formulario">
+<status status="NOT RUN" starttime="20220614 15:48:37.350" endtime="20220614 15:48:37.350"/>
+</kw>
+<kw name="Close App" library="base" type="TEARDOWN">
+<kw name="Close Application" library="Zoomba.MobileLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220614 15:48:37.351" endtime="20220614 15:48:37.578"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:37.351" endtime="20220614 15:48:37.578"/>
+</kw>
+<status status="FAIL" starttime="20220614 15:48:31.463" endtime="20220614 15:48:37.578">No keyword with name 'Validar Cadastro Básico Cliente' found.</status>
+</test>
+<test id="s1-t3" name="Validar Atualização de Dados do Cliente">
+<kw name="Start App" library="base" type="SETUP">
+<kw name="Get Current Date" library="DateTime">
+<var>${TODAY}</var>
+<arg>result_format=%d/%m/%Y %H:%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220614 15:48:37.580" level="INFO">${TODAY} = 14/06/2022 15:48</msg>
+<status status="PASS" starttime="20220614 15:48:37.580" endtime="20220614 15:48:37.580"/>
+</kw>
+<kw name="Set Appium Timeout" library="Zoomba.MobileLibrary">
+<arg>30</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20220614 15:48:37.580" endtime="20220614 15:48:37.580"/>
+</kw>
+<kw name="Android Local" library="devices">
+<kw name="Open Application" library="Zoomba.MobileLibrary">
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Android Emulator</arg>
+<arg>udid=emulator-5554</arg>
+<arg>app=${EXECDIR}/app/cadastro_clientes_teste.apk</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>fullReset=false</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220614 15:48:37.581" endtime="20220614 15:48:41.674"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:37.581" endtime="20220614 15:48:41.674"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:37.579" endtime="20220614 15:48:41.674"/>
+</kw>
+<kw name="Validar Cadastro Básico Cliente">
+<msg timestamp="20220614 15:48:41.677" level="FAIL">No keyword with name 'Validar Cadastro Básico Cliente' found.</msg>
+<status status="FAIL" starttime="20220614 15:48:41.677" endtime="20220614 15:48:41.678"/>
+</kw>
+<kw name="Selecionar Cliente" library="home">
+<status status="NOT RUN" starttime="20220614 15:48:41.678" endtime="20220614 15:48:41.678"/>
+</kw>
+<kw name="Atulizar Dados Cliente" library="formulario">
+<arg>João da Silva</arg>
+<arg>joaoDAsilva@email.com</arg>
+<status status="NOT RUN" starttime="20220614 15:48:41.678" endtime="20220614 15:48:41.678"/>
+</kw>
+<kw name="Saval Formulário" library="formulario">
+<status status="NOT RUN" starttime="20220614 15:48:41.678" endtime="20220614 15:48:41.678"/>
+</kw>
+<kw name="Validar Mensagem Sucesso" library="formulario">
+<arg>Cadastro atualizado com sucesso</arg>
+<status status="NOT RUN" starttime="20220614 15:48:41.678" endtime="20220614 15:48:41.678"/>
+</kw>
+<kw name="Close App" library="base" type="TEARDOWN">
+<kw name="Close Application" library="Zoomba.MobileLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220614 15:48:41.679" endtime="20220614 15:48:41.950"/>
+</kw>
+<status status="PASS" starttime="20220614 15:48:41.679" endtime="20220614 15:48:41.951"/>
+</kw>
+<status status="FAIL" starttime="20220614 15:48:37.579" endtime="20220614 15:48:41.951">No keyword with name 'Validar Cadastro Básico Cliente' found.</status>
+</test>
+<status status="FAIL" starttime="20220614 15:48:08.226" endtime="20220614 15:48:41.952"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="2" skip="0" id="s1" name="cadastroUsuario">cadastroUsuario</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220614 15:48:08.367" level="ERROR">Error in file '/Users/idd_fsilva/Projetos/neon/tests/cadastroUsuario.robot' on line 5: Resource file '../pages/cadatroUsusario.robot' does not exist.</msg>
+</errors>
+</robot>
