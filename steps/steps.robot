@@ -62,7 +62,7 @@ Então a mensagem "O arquivo foi salvo na sua pasta padrão de documentos com 'C
 
 Quando clicar no botão excluir
     Excluir Cliente
-    
+
 E confirmar a exclusão de cadastro
     Confirmar Exclusão de Cadastro
 

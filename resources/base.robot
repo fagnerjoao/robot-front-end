@@ -1,6 +1,5 @@
 *** Settings ***
 Library     Zoomba.MobileLibrary
-#Library     custom_keywords.py
 Library     DateTime
 Resource    helpers.robot
 Resource    devices.robot
