@@ -22,7 +22,7 @@
 
 
 # Cenários Front-end
-Nome Cenário                            |   Tag
+Nome Cenário Automatizado               |   Tag
 ----------------------------------------| ---------
 Cenário 1: cadastro básico de cliente   | cenario_1
 Cenário 2: Consultar cadastro de cliente| cenario_2
@@ -30,6 +30,7 @@ Cenário 3: atualizar cadastro de cliente| cenario_3
 Cenário 4: exportar dados de clientes   | cenario_4
 Cenário 5: excluir cadastro de cliente  | cenario_5
 
+** Os demais cenários estão no arquivo "cenarios.txt"
 
 # Execução dos Cenário:
 - O aarquivo .apk deve estar na pasta app do pojeto
