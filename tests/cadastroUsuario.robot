@@ -1,52 +1,39 @@
 *** Settings ***
-Resource        ../resources/base.robot
-Resource        ../pages/home.robot
-Resource        ../pages/formulario.robot
-Resource        ../pages/exportarDados.robot
-
+Resource        ../steps/steps.robot
 Test Setup      Start App
 Test Teardown   Close App
 
 *** Test Case ***
-Validar Cadastro Básico Cliente
-    Validar Tela inicial
-    Acessar Tela de Cadastro
-    Inserir Dados Básicos
-    Saval Formulário
-    Validar Mensagem Sucesso  Cadastro efetuado com sucesso
+Cenário 1: cadastro básico de cliente
+    [Tags]  cenario_1
+    Dado que estou na tela de cadastro basico de cliente
+    Quando eu preencher todos os dados
+    E clicar no botão salvar
+    Então a mensagem "Cadastro efetuado com sucesso" deve ser exibida
 
-Validar Consulta a Cadastro do Cliente
-    #Acessar Tela de Cadastro
-    #Inserir Dados Básicos
-    #Saval Formulário
-    #Validar Mensagem Sucesso  Cadastro efetuado com sucesso
-    Selecionar Cliente
-    Validar Nome Cliente    João Silva
+Cenário 2: Consultar cadastro de cliente
+    [Tags]  cenario_2
+    Dado que estou na tela inicial do app
+    Quando eu selecionar o cliente "João Silva"
+    Então a tela com os dados do cliente "João Silva" deve ser exibida
 
-Validar Atualização de Dados do Cliente
-    #Acessar Tela de Cadastro
-    #Inserir Dados Básicos
-    #Saval Formulário
-    #Validar Mensagem Sucesso  Cadastro efetuado com sucesso
-    Selecionar Cliente
-    Atulizar Dados Cliente  João da Silva  joaoDAsilva@email.com
-    Saval Formulário
-    Validar Mensagem Sucesso  Cadastro atualizado com sucesso
-    Selecionar Cliente
-    Validar Nome Cliente    João da Silva
+Cenário 3: atualizar cadastro de cliente
+    [Tags]  cenario_3
+    Dado que estou na tela de dados do cliente "João Silva"
+    Quando eu atualizar os dados nome e email
+    E clicar no botão salvar
+    E validar a mensagem "Cadastro atualizado com sucesso"
+    Então valido o cadastro atualizado do cliente "João da Silva"
 
-Validar Exportação de Dados
-    #Acessar Tela de Cadastro
-    #Inserir Dados Básicos
-    #Saval Formulário
-    #Validar Mensagem Sucesso  Cadastro efetuado com sucesso
-    Exportar Dados
+Cenário 4: exportar dados de clientes
+    [Tags]  cenario_4
+    Dado que estou na tela de exportaçãod e dados
+    Quando eu clicar em exportar excel
+    Então a mensagem "O arquivo foi salvo na sua pasta padrão de documentos com 'CAD_d_mm_yyyy.xls'" deve ser exibida
 
-Validar Exclusão de Cliente
-    #Acessar Tela de Cadastro
-    #Inserir Dados Básicos
-    #Saval Formulário
-    #Validar Mensagem Sucesso  Cadastro efetuado com sucesso
-    Selecionar Cliente
-    Excluir Cliente
-    Validar Lista Vazia
+Cenário 5: excluir cadastro de cliente
+    [Tags]  cenario_5
+	Dado que estou na tela de dados do cliente "João Silva"
+	Quando clicar no botão excluir
+	E confirmar a exclusão de cadastro
+	Então o cadastro "João Silva" não deve aparecer na lista de clientes

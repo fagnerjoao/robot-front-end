@@ -32,9 +32,15 @@ Acessar Tela Sobre o App
     Click Element                       ${BTN_EXPORTARBTN_SOBRE}
 
 Selecionar Cliente
+    [Arguments]                         ${nome}
     Wait Until Page Contains Element    ${NOME_LISTA}
-    Click Element                       ${NOME_LISTA}
+    Click Text                          ${nome}
 
 Validar Lista Vazia
     Wait Until Page Contains Element    ${NOME_PESQUISA}
     Page Should Not Contain Element     ${NOME_LISTA}
+
+Validar Exclusão de Cadastro
+    [Arguments]                         ${nome}
+    Wait Until Page Contains Element    ${NOME_PESQUISA}
+    Page Should Not Contain Text        ${nome}

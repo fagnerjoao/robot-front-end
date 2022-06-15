@@ -8,4 +8,4 @@ Android Local
     ...                 app=${EXECDIR}/app/cadastro_clientes_teste.apk
     ...                 autoGrantPermissions=true
     ...                 fullReset=false
-    ...                 noReset=true
+    ...                 noReset=false
