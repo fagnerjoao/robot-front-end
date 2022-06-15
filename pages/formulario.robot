@@ -18,7 +18,7 @@ ${EDIT_BAIRRO} =            id = br.com.dudstecnologia.cadastrodeclientes:id/edi
 ${EDIT_CEP} =               id = br.com.dudstecnologia.cadastrodeclientes:id/editCep
 ${EDIT_CIDADE} =            id = br.com.dudstecnologia.cadastrodeclientes:id/editCidade
 ${SPINNER_UF} =             id = br.com.dudstecnologia.cadastrodeclientes:id/spinnerEstados
-${TEXTVIEW_UF} =            xpath = //*[@text='AC']
+${TEXTVIEW_UF} =            xpath = //*[@text='BA']
 ${EDIT_NATURALIDADE} =      id = br.com.dudstecnologia.cadastrodeclientes:id/editNaturalidade
 ${EDIT_TELEFONE1} =         id = br.com.dudstecnologia.cadastrodeclientes:id/editTelefone1
 ${BTN_LIGAR1} =             id = br.com.dudstecnologia.cadastrodeclientes:id/btnLigar1
@@ -42,6 +42,7 @@ ${EDIT_CONTA} =             id = br.com.dudstecnologia.cadastrodeclientes:id/edi
 ${BTN_SALVAR} =             id = br.com.dudstecnologia.cadastrodeclientes:id/btnSalvar
 ${BTN_EXCLUIR} =            id = br.com.dudstecnologia.cadastrodeclientes:id/btnExcluir
 ${ANDROID_MESSAGE}=         id = android:id/message
+${ANDROID_BTN_OK}=          id = android:id/button1
 
 
 
@@ -58,11 +59,8 @@ Inserir Dados Básicos
     Input Text                          ${EDIT_BAIRRO}      Dos Sonhos
     Input Text                          ${EDIT_CEP}         56328-070
     Input Text                          ${EDIT_CIDADE}      Maravilhosa
-    #Click Element                       ${SPINNER_UF}
-    #Input Text                          ${SPINNER_UF}       PE
     Click Element                       ${SPINNER_UF}
     Wait Until Page Contains Element    ${TEXTVIEW_UF}
-    #Scroll Down To Text                 GO
     Click Element                       ${TEXTVIEW_UF}
     Input Text                          ${EDIT_TELEFONE1}   2345678
     Input Text                          ${EDIT_TELEFONE2}   988776622
@@ -70,13 +68,34 @@ Inserir Dados Básicos
     Input Text                          ${EDIT_OBS}         NEON > ALL
 
 Saval Formulário
-    Click Element                       ${BTN_SALVAR}
+    Click Element                           ${BTN_SALVAR}
 
 Validar Mensagem Sucesso
+    [Arguments]                             ${mensagem_sucesso}
     Wait Until Page Contains Element        ${ANDROID_MESSAGE}
-    Element Should Contain Text             ${ANDROID_MESSAGE}  Cadastro efetuado com sucesso
-    
+    Element Should Contain Text             ${ANDROID_MESSAGE}  ${mensagem_sucesso}
+    Click Element                           ${ANDROID_BTN_OK}
+    Go Back
 
+Validar Nome Cliente
+    [Arguments]                             ${nome}
+    Wait Until Page Contains Element        ${EDIT_NOME}
+    Element Should Contain Text             ${EDIT_NOME}        ${nome}
+
+Atulizar Dados Cliente
+    [Arguments]                             ${nome}     ${email}
+    Wait Until Page Contains Element        ${EDIT_NOME}
+    Input Text                              ${EDIT_NOME}        ${nome}
+    Input Text                              ${EDIT_EMAIL}       ${email}
+
+Excluir Cliente
+    Wait Until Page Contains Element        ${BTN_EXCLUIR}
+    Click Element                           ${BTN_EXCLUIR}
+
+Confirmar Exclusão de Cadastro
+    Wait Until Page Contains Element        ${ANDROID_MESSAGE}
+    Element Should Contain Text             ${ANDROID_MESSAGE}  Tem certeza que deseja excluir este cadastro?
+    Click Element                           ${ANDROID_BTN_OK}
 
     
 
