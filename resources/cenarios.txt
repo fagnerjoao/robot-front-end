@@ -1,0 +1,73 @@
+###Cenários Neon front-end###
+Funcionalidade: Cadastro de Cliente
+Eu como usuário
+Quero manipular o cadastro de clientes
+Para ter os dados dos clientes registrados e atualizados
+
+Cenário 1: cadastro básico de cliente
+Dado que estou na tela de cadastro basico de cliente
+Quando eu preencher todos os dados
+E clicar no botão salvar
+Então a mensagem "Cadastro efetuado com sucesso" deve ser exibida
+
+Cenário 2: consultar cadastro de cliente
+Dado que estou na tela inicial do app
+Quando eu clicar no cliente "X"
+Então a tela com os dados do cliente deve ser exibida
+
+Cenário 3: atualizar cadastro de cliente
+Dado que estou na tela de dados do cliente "X"
+Quando eu atualizar os dados
+E clicar no botão salvar
+E validar a mensagem "Cadastro atualizado com sucesso"
+Então valido o cadastro atualizado do cliente "X da Silva"
+
+Cenário 4: excluir cadastro de cliente
+Dado que estou na tela de dados do cliente "X"
+Quando clicar no botão excluir
+E confirmar a exclusão de cadastro
+Então o cadastro "X" não deve aparecer na lista de clientes
+
+Cenário 5: cadastrar sem informar o nome do cliente
+Dado que estou na tela de cadastro basico de cliente
+Quando eu preencher todos os dados execeto o nome
+E clicar no botão salvar
+Então a mensagem "Insira a Nome" deve ser exibida
+
+Cenário 6: editar dados sem salvar
+Dado que estou na tela de dados do cliente "X"
+Quando eu atualizar os dados
+E não clicar no botão salvar
+E voltar para a tela inicial
+Então valido que o cadastro do cleinte não dever estar atualizado
+
+------------------------------------------------------------------------
+
+Funcionalidade: Pesquisa Cliente
+Eu como usuário
+Quero pesquisar por clientes na lista de cadastro
+Para ter acesso mais rápido aos dados buscados
+
+Cenário 1: pesquisar pornome de cliente
+Dado que estou na tela inicial do app
+Quando eu clicar no campo Pesquisar
+E informar o nome do cliente
+Então a pesquisa deve retornar os registros de acordo com o nome informado
+
+Cenário 2: validar lista vazia
+Dado que estou na tela inicial do app
+Quando eu clicar no campo Pesquisar
+E informar um nome que não existe nos registros do app
+Então a pesquisa não deve retornar os registros
+
+------------------------------------------------------------------------
+
+Funcionalidade: Extação de Dados
+Eu como usuário
+Quero exportar os dados dos clientes
+Para ter os dados dos salvos em arquivo
+
+Cenário 1: exportar dados de clientes
+Dado que estou na tela de exportação e dados
+Quando eu clicar em exportar excel
+Então a mensagem "O arquivo foi salvo na sua pasta padrão de documentos com 'CAD_X_XX_XXXX.xls" deve ser exibida

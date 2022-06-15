@@ -27,8 +27,8 @@ Cenário 3: atualizar cadastro de cliente
 
 Cenário 4: exportar dados de clientes
     [Tags]  cenario_4
-    Dado que estou na tela de exportaçãod e dados
-    Quando eu clicar em exportar excel
+    Dado que estou na tela de exportação de dados
+    Quando eu clicar em EXPORTAR EXCEL
     Então a mensagem "O arquivo foi salvo na sua pasta padrão de documentos com 'CAD_d_mm_yyyy.xls'" deve ser exibida
 
 Cenário 5: excluir cadastro de cliente

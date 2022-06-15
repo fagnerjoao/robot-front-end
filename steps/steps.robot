@@ -47,14 +47,14 @@ Então valido o cadastro atualizado do cliente "${nome}"
     Selecionar Cliente      ${nome}
     Validar Nome Cliente    ${nome}
 
-Dado que estou na tela de exportaçãod e dados
+Dado que estou na tela de exportação de dados
     Acessar Tela de Cadastro
     Inserir Dados Básicos
     Saval Formulário
     Validar Mensagem Sucesso  Cadastro efetuado com sucesso
     Acessar Tela de Exportar Dados
 
-Quando eu clicar em exportar excel
+Quando eu clicar em EXPORTAR EXCEL
     Exportar Dados
 
 Então a mensagem "O arquivo foi salvo na sua pasta padrão de documentos com 'CAD_d_mm_yyyy.xls'" deve ser exibida
