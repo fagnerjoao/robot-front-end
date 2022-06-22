@@ -32,7 +32,7 @@ Cenário 5: excluir cadastro de cliente  | cenario_5
 
 ** Os demais cenários estão no arquivo "cenarios.txt"
 
-# Execução dos Cenário:
+# Execução dos Cenários:
 - O aarquivo .apk deve estar na pasta app do pojeto
 - Todos os cenários. Ex: robot -d ./logs tests/cadastroUsuario.robot   
 - Cenário específico. Ex: robot -i cenario_5 -d ./logs tests/cadastroUsuario.robot
