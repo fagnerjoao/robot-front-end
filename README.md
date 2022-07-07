@@ -1,4 +1,4 @@
-## NEON Front-end
+## Robot Framework front-end
 
 
 # Setup PC
